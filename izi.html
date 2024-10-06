@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню ресторана</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+            text-align: center;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 390px;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .iner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0px 0px;
+            padding: 0px 8px;
+
+        }
+        .iner .item {
+            border: 1px solid #000; /* Рамочка */
+            padding: 0; /* Убираем внутренний отступ */
+            flex: 1 1 calc(50% - 10px); /* Ширина объекта с учетом отступов */
+            box-sizing: border-box; /* Включает padding и border в ширину и высоту */
+            border-radius: 8px; /* Закругленные углы */
+            display: flex; /* Делаем .item flex-контейнером */
+            flex-direction: column; /* Выравнивание по столбцу */
+            align-items: center; /* Центрируем содержимое по горизонтали */
+        }
+
+        .category-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+        .category-button:hover {
+            background-color: #0056b3;
+        }
+        .img {
+            width: 100%;
+            height: auto;
+        }
+        .item {
+            text-align: center;
+            max-width: 100%;
+            padding-right: calc(var(--bs-gutter-x)* .5);
+            padding-left: calc(var(--bs-gutter-x)* .5);
+            margin-top: var(--bs-gutter-y);
+        }
+        .btn {
+            margin: 10px;
+            width: calc(100% - 20px);
+            height: 34px;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+        .item-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1; /* Растягивание по всему контейнеру */
+            width: 100%; /* Занимает всю ширину родительского контейнера */
+            /*padding: 10px;  Добавляем внутренний отступ к .item-content */
+        }
+
+        .item-weight {
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 14px;
+            padding: 10px;
+            margin: 0 !important;
+        }
+        p {
+            display: block;
+            margin: 0px;
+            padding: 10px;
+        }
+        .item-content img {
+            margin-bottom: 0; /* Убираем нижний отступ у изображения */
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="container">
+            <h1>Меню ресторана</h1>
+            <div class="categories">
+                <button class="category-button" onclick="showCategory('Snacks')">Закуски</button>
+                <button class="category-button" onclick="showCategory('Bruschettas')">Брускеты</button>
+                <button class="category-button" onclick="showCategory('Salad')">Салаты</button>
+                <button class="category-button" onclick="showCategory('Soup')">Супы</button>
+                <button class="category-button" onclick="showCategory('Hot dishes')">Горячие блюда</button>
+                <button class="category-button" onclick="showCategory('Grill')">Гриль</button>
+                <button class="category-button" onclick="showCategory('Smokehouse')">Коптильня</button>
+                <button class="category-button" onclick="showCategory('Paste')">Паста</button>
+                <button class="category-button" onclick="showCategory('Desserts')">Десерты</button>
+            </div>
+
+                <div class="iner">
+                    <div class="item" id="item1">
+                            <img src="/home/den/PycharmProjects/pythonProject/bot izi/images/1.jpg" alt="" class="img">
+                            <h3>Французский паштет из куриной печени с чатни из брусники и фенхеля и чипсами из льна</h3>
+                            <p>170 г</p>
+                            <button class="btn" id="btn1">480 р.</button>
+  
+                    </div>
+                    <div class="item" id="item2">
+                        <img src="/home/den/PycharmProjects/pythonProject/bot izi/images/1.jpg" alt="" class="img">
+                        <h3>Французский паштет из куриной печени с чатни из брусники и фенхеля и чипсами из льна</h3>
+                        <p>170 г</p>
+                        <button class="btn" id="btn2">480 р.</button>
+
+                    </div>
+                    <div class="item" id="item3">
+                        <img src="/home/den/PycharmProjects/pythonProject/bot izi/images/1.jpg" alt="" class="img">
+                        <h3>Французский паштет из куриной печени с чатни из брусники и фенхеля и чипсами из льна</h3>
+                        <p>170 г</p>
+                        <button class="btn" id="btn3">480 р.</button>
+
+                    </div>
+                    <div class="item" id="item4">
+                        <img src="/home/den/PycharmProjects/pythonProject/bot izi/images/1.jpg" alt="" class="img">
+                        <h3>Французский паштет из куриной печени с чатни из брусники и фенхеля и чипсами из льна</h3>
+                        <p>170 г</p>
+                        <button class="btn" id="btn4">480 р.</button>
+
+                    </div>
+                </div>
+
+            <div id="Bruschettas" class="category" style="display: none;">
+                <div class="category-title">Брускеты</div>
+                <div class="dish">
+                    <div class="dish-image">
+                        <img src="path/to/cheeseburger.jpg" alt="Чизбургер">
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">Чизбургер</div>
+                        <div class="dish-description">Булочка, говяжий стейк, сыр, салат, помидор</div>
+                    </div>
+                </div>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="path/to/bigmac.jpg" alt="Биг Мак">
+                </div>
+                <div class="dish-info">
+                    <div class="dish-name">Биг Мак</div>
+                    <div class="dish-description">Две булочки, два говяжьих стейка, сыр, салат, помидор, соус</div>
+                </div>
+                </div>
+            </div>    
+        </div>
+
+        <div id="Salad" class="category" style="display: none;">
+            <div class="category-title">Салаты</div>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="path/to/caesar.jpg" alt="Цезарь">
+                </div>
+                <div class="dish-info">
+                    <div class="dish-name">Цезарь</div>
+                    <div class="dish-description">Салат ромэн, курица, пармезан, крутоны, соус Цезарь</div>
+                </div>
+            </div>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="path/to/greek.jpg" alt="Греческий">
+                </div>
+                <div class="dish-info">
+                    <div class="dish-name">Греческий</div>
+                    <div class="dish-description">Салат ромэн, огурцы, помидоры, маслины, фета</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Soup" class="category" style="display: none;">
+            <div class="category-title">Супы</div>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="path/to/borscht.jpg" alt="Борщ">
+                </div>
+                <div class="dish-info">
+                    <div class="dish-name">Борщ</div>
+                    <div class="dish-description">Свекла, капуста, морковь, картофель, мясо</div>
+                </div>
+            </div>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="path/to/schi.jpg" alt="Щи">
+                </div>
+                <div class="dish-info">
+                    <div class="dish-name">Щи</div>
+                    <div class="dish-description">Капуста, морковь, картофель, мясо</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Hot dishes" class="category" style="display: none;">
+        <div class="category-title">Горячие блюда</div>
+        <div class="dish">
+            <div class="dish-image">
+                <img src="path/to/margherita.jpg" alt="Маргарита">
+            </div>
+            <div class="dish-info">
+                <div class="dish-name">Маргарита</div>
+                <div class="dish-description">Томатный соус, моцарелла, базилик</div>
+            </div>
+        </div>
+        <div class="dish">
+            <div class="dish-image">
+                <img src="path/to/pepperoni.jpg" alt="Пепперони">
+            </div>
+            <div class="dish-info">
+                <div class="dish-name">Пепперони</div>
+                <div class="dish-description">Томатный соус, моцарелла, пепперони</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Grill" class="category" style="display: none;">
+        <div class="category-title">Гриль</div>
+        <div class="dish">
+            <div class="dish-image">
+                <img src="path/to/margherita.jpg" alt="Маргарита">
+            </div>
+            <div class="dish-info">
+                <div class="dish-name">Маргарита</div>
+                <div class="dish-description">Томатный соус, моцарелла, базилик</div>
+            </div>
+        </div>
+        <div class="dish">
+            <div class="dish-image">
+                <img src="path/to/pepperoni.jpg" alt="Пепперони">
+            </div>
+            <div class="dish-info">
+                <div class="dish-name">Пепперони</div>
+                <div class="dish-description">Томатный соус, моцарелла, пепперони</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Smokehouse" class="category" style="display: none;">
+        <div class="category-title">Коптильня</div>
+        <div class="dish">
+            <div class="dish-image">
+                <img src="path/to/margherita.jpg" alt="Маргарита">
+            </div>
+            <div class="dish-info">
+                <div class="dish-name">Маргарита</div>
+                <div class="dish-description">Томатный соус, моцарелла, базилик</div>
+            </div>
+        </div>
+        <div class="dish">
+            <div class="dish-image">
+                <img src="path/to/pepperoni.jpg" alt="Пепперони">
+            </div>
+            <div class="dish-info">
+                <div class="dish-name">Пепперони</div>
+                <div class="dish-description">Томатный соус, моцарелла, пепперони</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Paste" class="category" style="display: none;">
+        <div class="category-title">Паста</div>
+        <div class="dish">
+            <div class="dish-image">
+                <img src="path/to/margherita.jpg" alt="Маргарита">
+            </div>
+            <div class="dish-info">
+                <div class="dish-name">Маргарита</div>
+                <div class="dish-description">Томатный соус, моцарелла, базилик</div>
+            </div>
+        </div>
+        <div class="dish">
+            <div class="dish-image">
+                <img src="path/to/pepperoni.jpg" alt="Пепперони">
+            </div>
+            <div class="dish-info">
+                <div class="dish-name">Пепперони</div>
+                <div class="dish-description">Томатный соус, моцарелла, пепперони</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Desserts" class="category" style="display: none;">
+        <div class="category-title">Десерты</div>
+        <div class="dish">
+            <div class="dish-image">
+                <img src="path/to/margherita.jpg" alt="Маргарита">
+            </div>
+            <div class="dish-info">
+                <div class="dish-name">Маргарита</div>
+                <div class="dish-description">Томатный соус, моцарелла, базилик</div>
+            </div>
+        </div>
+        <div class="dish">
+            <div class="dish-image">
+                <img src="path/to/pepperoni.jpg" alt="Пепперони">
+            </div>
+            <div class="dish-info">
+                <div class="dish-name">Пепперони</div>
+                <div class="dish-description">Томатный соус, моцарелла, пепперони</div>
+            </div>
+        </div>
+        </div>
+    </div>     
+    <script>
+        function showCategory(categoryId) {
+            // Скрыть все категории
+            document.querySelectorAll('.category').forEach(category => {
+                category.style.display = 'none';
+            });
+            // Показать выбранную категорию
+            document.getElementById(categoryId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
